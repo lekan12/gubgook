@@ -26,7 +26,9 @@
 	a {
 		color: #2F363E;
 	}
+	
 }
+
 
 #main_content {
 	#content {
@@ -34,15 +36,18 @@
 	}
 	padding-bottom: 100px;
 	.link {
-		padding: 2em 1em;
-		border-bottom: 1px solid #e9e9e9;
+		padding: 1em 1em;
+		border-bottom: 2px solid #e9e9e9;
 		.title {
-
+			
 			a {
 				color: #FF4500;
 			}
+			
 		}
+		
 	}
+	
 	.comments_title {
 		margin-top: 2em;
 	}
@@ -55,4 +60,22 @@
 			}
 		}
 	}
+	
+	h3 {
+		margin-top: -12px;
+		margin-bottom: 15px;
+		font-size: 2em;
+	}
+		h4 {
+		margin-top: -12px;
+		margin-bottom: 15px;
+		
+	}
+	
+		h5 {
+		margin-top: -12px;
+		margin-bottom: 15px;
+		
+	}
+	
 }
