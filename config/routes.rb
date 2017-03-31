@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  root "pagess#index"
+  
+  get 'profile' => 'pages#profile'
+  get 'publisher' => 'pages#publisher'
+  get 'writer' => 'pages#writer'
+
   resources :comments
   resources :comments
 
@@ -10,7 +17,7 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-  root "links#index"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
