@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root "pagess#index"
+  root "links#index"
   
   get 'profile' => 'pages#profile'
   get 'publisher' => 'pages#publisher'
