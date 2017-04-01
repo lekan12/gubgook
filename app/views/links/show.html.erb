@@ -11,7 +11,7 @@
       </h4>
   
   <h5>
-  <small class="author">Submitted by <%= @link.user.name %></small></h5>
+  <small class="author">Submitted <%= time_ago_in_words(@link.created_at) %> ago by <%= @link.user.name %></small></h5>
 </div>
 
 <div class="btn-group">
