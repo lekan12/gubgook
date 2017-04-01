@@ -5967,3 +5967,561 @@ Processing by LinksController#index as HTML
   Rendered links/index.html.erb within layouts/application (11.4ms)
   [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
 Completed 200 OK in 82ms (Views: 80.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:36:07 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"  ORDER BY created_at DESC
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (103.7ms)
+  [1m[36mCategory Load (1.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 607ms (Views: 579.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:36:43 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  Rendered collection (0.0ms)
+  Rendered links/show.html.erb within layouts/application (113.6ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 161ms (Views: 155.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:37:44 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (12.1ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:38:44 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (15.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:39:32 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  Rendered collection (0.0ms)
+  Rendered links/show.html.erb within layouts/application (10.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:39:37 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "links"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"  ORDER BY created_at DESC
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (99.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 150ms (Views: 147.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:39:40 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  Rendered collection (0.1ms)
+  Rendered links/show.html.erb within layouts/application (7.7ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:39:42 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (14.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:40:03 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  Rendered collection (0.0ms)
+  Rendered links/show.html.erb within layouts/application (8.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 61ms (Views: 58.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/links/3/comments" for 92.237.108.173 at 2017-04-01 01:40:07 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVK/oPuYC/xJXksNCpcFKw7tq0XM7wpC1JPfwRDT9bGuQEAJSZblsJLR7flZdoRXIunE4IFhXcBPMH3JAir2qA==", "comment"=>{"body"=>"Great"}, "commit"=>"Add Comment", "link_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "comments" ("body", "link_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Great"], ["link_id", 3], ["user_id", 1], ["created_at", "2017-04-01 01:40:07.867553"], ["updated_at", "2017-04-01 01:40:07.867553"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+Redirected to https://gubgook-lekan12.c9users.io/links/3
+Completed 302 Found in 23ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:40:08 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (3.1ms)
+  Rendered links/show.html.erb within layouts/application (13.7ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 66ms (Views: 63.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:40:17 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (12.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:43:07 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.7ms)
+  Rendered links/show.html.erb within layouts/application (9.6ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:44:13 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (2.4ms)
+  Rendered links/show.html.erb within layouts/application (12.8ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:44:40 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.1ms)
+  Rendered links/show.html.erb within layouts/application (10.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 102ms (Views: 99.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/edit" for 92.237.108.173 at 2017-04-01 01:44:44 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (31.4ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 86ms (Views: 83.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:44:50 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (12.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:45:17 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (12.2ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:46:18 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.2ms)
+  Rendered links/show.html.erb within layouts/application (12.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:47:15 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.0ms)
+  Rendered links/show.html.erb within layouts/application (9.0ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 1751ms (Views: 1749.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-5589fd0057ef4bf6ea935d1be26d59ecf481e8e7b767e3496685b96f4ee2a3e4.css?body=1" for 92.237.108.173 at 2017-04-01 01:47:17 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:49:14 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.8ms)
+  Rendered links/show.html.erb within layouts/application (15.3ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 1820ms (Views: 1816.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-e8d30a4d91a5e07b746fe3510f18cb171ac4f961862371c0bc6bc2aa44685498.css?body=1" for 92.237.108.173 at 2017-04-01 01:49:16 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:50:21 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.1ms)
+  Rendered links/show.html.erb within layouts/application (8.7ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 1669ms (Views: 1666.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-1acf5cde480eebba598feb006c1419f2a9249bb67de104b5562b747ada242912.css?body=1" for 92.237.108.173 at 2017-04-01 01:50:23 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:50:27 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (12.3ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/links/3" for 92.237.108.173 at 2017-04-01 01:50:37 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (1.3ms)
+  Rendered links/show.html.erb within layouts/application (10.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 135ms (Views: 133.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:51:24 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (13.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 73ms (Views: 71.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:55:48 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (16.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 79ms (Views: 76.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for 92.237.108.173 at 2017-04-01 01:56:19 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1RWD0lt4bunoHm8v7eLh1cUfpqaqBB63t1yL2xqo6uvKB3x76XaApTORydu+A2Cp6RvJA+eKSTUs/ynTCFHp8g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://gubgook-lekan12.c9users.io/
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:56:19 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "links"
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY created_at DESC[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (14.9ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 64ms (Views: 61.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-04-01 01:56:23 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"  ORDER BY created_at DESC
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (14.2ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 84ms (Views: 81.0ms | ActiveRecord: 1.8ms)

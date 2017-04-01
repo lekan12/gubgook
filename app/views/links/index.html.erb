@@ -12,13 +12,13 @@
 
 <% if !user_signed_in? %>
 <div class="jumbotron">
-	<h1>Review The News</h1>
+	<h2>Review The News</h2>
 	<p>Give your opinion on the quality and truthfulness of news articles and stories. You decide if it really is fake news!</p>
 	<p><%= link_to "Sign up to submit a news story for review, rate and comment", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
 </div>
 <% else %>
 <div class="jumbotron">
-	<h1>gubgook. Review The News.</h1>
+	<h2>gubgook. Review The News.</h2>
 	<p>scroll down to see the most recent news articles submitted for review</p>
 
 </div>
@@ -42,6 +42,9 @@
       <h5>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %></small>
     </h5>
+    <h5 class="comments_title">
+  <%= link.comments.count %> Comments
+</h5>
 
     <div class="btn-group">
       

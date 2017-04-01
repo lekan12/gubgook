@@ -34,13 +34,13 @@
 <% if @link.user == current_user -%>
 	<div class="btn-group">
 		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+		<%= link_to 'Delete', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 	</div>
 <% end %>
 
-<h3 class="comments_title">
+<h5 class="comments_title">
   <%= @link.comments.count %> Comments
-</h3>
+</h5>
 
 <div id="comments">
   <%= render :partial => @link.comments %>
