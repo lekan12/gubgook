@@ -88,5 +88,53 @@
 		.author {
 		color: black;
 	}
-	
+	.category {
+		color: black;
+		font-weight: 800;
+	}
+
+
 }
+
+	.dropdown-menu > li > a:hover {
+	background-color: black;
+		color: white;
+	}
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: black;
+		color: white;	
+	}
+.dropdown-menu > .active > a {
+	background-color: black;
+		color: white;
+}
+
+.current-category {
+	margin-bottom: 40px;
+}
+
+	.new-link-form {
+	
+	h2 {
+		margin-top: 50px;
+		font-weight: 600;
+	}
+
+	#category_id {
+		margin-bottom: 10px;
+	}
+
+	}
+	
+	.edit-link-form {
+	
+	h2 {
+		margin-top: 50px;
+		font-weight: 600;
+	}
+
+	#link_category_id {
+		margin-bottom: 10px;
+	}
+
+	}

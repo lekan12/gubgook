@@ -6,7 +6,12 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+  if params[:category].blank?
+			@links = Link.all.order("created_at DESC")
+	else
+			@category_id = Category.find_by(name: params[:category]).id
+			@links = Link.where(:category_id => @category_id).order("created_at DESC")
+  end
   end
 
   # GET /links/1
@@ -17,17 +22,20 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = current_user.links.build
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   # GET /links/1/edit
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   # POST /links
   # POST /links.json
   def create
     @link = current_user.links.build(link_params)
-
+    @link.category_id = params[:category_id]
+    
     respond_to do |format|
       if @link.save
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
@@ -42,6 +50,7 @@ class LinksController < ApplicationController
   # PATCH/PUT /links/1
   # PATCH/PUT /links/1.json
   def update
+    @link.category_id = params[:category_id]
     respond_to do |format|
       if @link.update(link_params)
         format.html { redirect_to @link, notice: 'Link was successfully updated.' }
@@ -88,6 +97,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :url, :publisher, :writer)
+      params.require(:link).permit(:title, :url, :publisher, :writer, :category_id)
     end
 end

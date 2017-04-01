@@ -1,3 +1,15 @@
+
+
+<% if @links.count == 0 %>
+<div class="jumbotron">
+	<h2>There are no news articles currently in this category</h2>
+<p><%= link_to "Submit an article", new_link_path, class: "btn btn-primary btn-lg" %></p>
+</div>
+<% else %>	
+
+
+
+
 <% if !user_signed_in? %>
 <div class="jumbotron">
 	<h1>Review The News</h1>
@@ -11,13 +23,16 @@
 
 </div>
 <% end %>
-
+<% end %>
 
 
 <% @links.each do |link| %>
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %><br> </h2>
+      <h3>
+        <small class="category" >Category: <%= link.category.name %></small>
+        </h3>
       <h3>
         <small class="publisher" >Publisher: <%= link.publisher %></small>
         </h3>

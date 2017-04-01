@@ -12,9 +12,20 @@
       <div class="container">
         <div id="logo" class="navbar-brand"><%= link_to "gubgook", root_path %></div>
         <nav class="collapse navbar-collapse navbar-ex1-collapse">
-        	<% if user_signed_in? -%>
+        	
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= link_to 'Submit link', new_link_path %></li>
+							<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<% Category.all.each do |category| %>
+							<li class="<%= 'active' if params[:category] == category.name %>">
+								<%= link_to category.name, links_path(category: category.name), class: "link" %>
+							</li>
+						<% end %>
+					</ul>
+				</li>
+				<% if user_signed_in? -%>
+							<li><%= link_to 'Submit News Article', new_link_path %></li>
 							<li><%= link_to 'Account', edit_user_registration_path %></li>
 							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
 						</ul>

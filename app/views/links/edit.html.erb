@@ -1,6 +1,52 @@
-<h1>Editing Link</h1>
+<div class="edit-link-form">
 
-<%= render 'form' %>
+<h2>Edit News Article</h2>
+
+<%= form_for(@link) do |f| %>
+  <% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+      <% @link.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  
+   <%= f.select :category_id, @categories %>
+  
+    <div class="form-group">
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+    <%= f.label :writer %>
+    <%= f.text_field :writer, class: "form-control" %>
+    </div>
+  
+  <div class="form-group">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, class: "form-control" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+  </div>
+
+<% end %>
+
+</div>
 
 <%= link_to 'Show', @link %> |
 <%= link_to 'Back', links_path %>
+

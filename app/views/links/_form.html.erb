@@ -11,10 +11,14 @@
     </div>
   <% end %>
 
+ 
+
   <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control" %>
   </div>
+  
+   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select news category") %>
   
     <div class="form-group">
     <%= f.label :publisher %>
