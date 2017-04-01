@@ -3,15 +3,25 @@ class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authorized_user, only: [:edit, :update, :destroy]
 
+     def search
+
+     end
+    
+    
+    def search_results
+      @found_links = Link.keyword_search(params[:search_keywords]).order_list(params[:sort_by])
+    end
+  
   # GET /links
   # GET /links.json
   def index
   if params[:category].blank?
-			@links = Link.all.order("created_at DESC")
+			@links = Link.all.order_list(params[:sort_by])
 	else
 			@category_id = Category.find_by(name: params[:category]).id
-			@links = Link.where(:category_id => @category_id).order("created_at DESC")
+			@links = Link.where(:category_id => @category_id).order_list(params[:sort_by])
   end
+  	
   end
 
   # GET /links/1
@@ -83,12 +93,15 @@ class LinksController < ApplicationController
     @link.downvote_from current_user
     redirect_to :back
   end
+  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_link
       @link = Link.find(params[:id])
     end
+    
 
     def authorized_user
       @link = current_user.links.find_by(id: params[:id])

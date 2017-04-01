@@ -1,23 +1,20 @@
 Rails.application.routes.draw do
-  
-  root "links#index"
-  
-  get 'profile' => 'pages#profile'
-  get 'publisher' => 'pages#publisher'
-  get 'writer' => 'pages#writer'
 
-  resources :comments
   resources :comments
 
   devise_for :users
   resources :links do
+   
     member do
       put "like", to:    "links#upvote"
       put "dislike", to: "links#downvote"
     end
     resources :comments
+     
   end
-  
+  get 'search' => 'links#search', as: 'search'
+  get 'search_results' => 'links#search_results', as: 'search_results'
+  root "links#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
