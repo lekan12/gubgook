@@ -25,6 +25,11 @@
    <%= f.select :category_id, @categories %>
   
     <div class="form-group">
+    <%= f.label :summary %>
+    <%= f.text_area :summary, :size => "10x10", placeholder: "Write a short summary of the story...", class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
     <%= f.label :publisher %>
     <%= f.text_field :publisher, class: "form-control" %>
     </div>
