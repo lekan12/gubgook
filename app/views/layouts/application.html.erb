@@ -5,11 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  	<%= favicon_link_tag "Favicon.JPG" %>
+  	<meta content="Fake news">
+  	<meta content="Review the news">
+  	<meta content="discuss debate comment chat news topics">
+  	<meta name="Fake news">
+  	<meta name="Review news article gubgook">
+  	
   	
 </head>
 
 <body>
-	<header class="navbar navbar-default" role="navigation">
+	<header class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-inner">
       <div class="container">
         <div id="logo" class="navbar-brand"><%= link_to "gubgook", root_path %></div>

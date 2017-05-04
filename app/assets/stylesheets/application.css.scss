@@ -125,7 +125,8 @@
 	
 	h2 {
 		margin-top: 50px;
-		font-weight: 600;
+		font-weight: 500;
+		
 	}
 
 	#category_id {
@@ -138,7 +139,7 @@
 	
 	h2 {
 		margin-top: 50px;
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	#link_category_id {
@@ -150,4 +151,26 @@
 	font-weight: 500;
 	color: black;
 	
+}
+
+body {
+    background-color: rgba(66, 110, 134, 0.30);
+    
+}
+
+
+.panel {
+    margin-top: 70px;
+}
+
+.groupform {
+    margin-top: 90px;
+}
+
+.new-link-form {
+    margin-top: 90px;
+}
+
+.edit-link-form {
+    margin-top: 90px;
 }
