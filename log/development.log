@@ -27737,3 +27737,108 @@ Completed 200 OK in 65ms (Views: 63.1ms | ActiveRecord: 0.3ms)
   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Religion"], ["created_at", "2017-05-05 22:01:13.326900"], ["updated_at", "2017-05-05 22:01:13.326900"]]
   [1m[36m (14.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 92.237.108.173 at 2017-05-05 22:05:50 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"  ORDER BY "links"."created_at" DESC[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 10]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 10], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 10], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 9]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 9], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 9], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (125.5ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 830ms (Views: 793.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 92.237.108.173 at 2017-05-05 22:09:24 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LinksController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "links"[0m
+  [1m[35mLink Load (0.5ms)[0m  SELECT "links".* FROM "links"  ORDER BY "links"."created_at" DESC
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 10]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 10], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 10], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 9]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 9], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 9], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 7]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"], ["vote_flag", "f"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "t"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ? AND "votes"."vote_scope" IS NULL  [["votable_id", 2], ["votable_type", "Link"], ["vote_flag", "f"]]
+  Rendered links/index.html.erb within layouts/application (57.1ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 132ms (Views: 126.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/Favicon-8af429e482e8cea2c90b8aff8b0b0edaba5fe41ad41fb77792fb4fea8fc05588.JPG" for 92.237.108.173 at 2017-05-05 22:09:25 +0000
+Cannot render console from 92.237.108.173! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
