@@ -6,7 +6,7 @@ class Link < ActiveRecord::Base
 	
 def self.keyword_search (keywords)
 		 keywords = "%" + keywords + "%"
-         Link.where("title ILIKE ? OR category_id ILIKE ? OR publisher ILIKE ? OR writer ILIKE ?", keywords, keywords, keywords, keywords)
+         Link.where("title like ? OR category_id like ? OR publisher like ? OR writer like ?", keywords, keywords, keywords, keywords)
 end
 
 def self.order_list(sort_order)
